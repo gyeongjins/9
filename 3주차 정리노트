@@ -14,4 +14,32 @@ _number, define, 9values, INTI, size0f, _%_save, extern,-age 중 올바른 예�
 1.올바른 예:_number, define, INTI, size0f, 
 2.잘못된 예:9values, _%_save, extern, -age
 
-연습문제 2번
+연습문제 1.1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+연습문제 2-2
+
+#include <stdio.h>
+
+int main(void)
+{
+short length = 5.56;
+short area, const int number = 20;
+area = length * length;
+number = 30;
+printf("사각형의 면적은 %lf 입니다.\n", area);
+return 0;
+}
