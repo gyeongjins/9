@@ -12,4 +12,6 @@ _number, define, 9values, INTI, size0f, _%_save, extern,-age 중 올바른 예�
 위의 식별자 작성 규칙에 따라 
 
 1.올바른 예:_number, define, INTI, size0f, 
-2.잘못된 예:9values, _%_save,
+2.잘못된 예:9values, _%_save, extern, -age
+
+연습문제 2번
