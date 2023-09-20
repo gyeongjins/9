@@ -54,20 +54,30 @@ int main(void)
 
 int main(void)
 {
-short length = 5.56;
+short length = 5.56;                    //short 정수라서 소수점이 표현불가능하므로 float나 double로 수정
 short area, const int number = 20;
 area = length * length;
-number = 30;
-printf("사각형의 면적은 %lf 입니다.\n", area);
+number = 30;          // const int number를 통하여 상수로 선언되었으므로 추후 번복이 불가능하기때문에 삭제
+printf("사각형의 면적은 %lf 입니다.\n", area);             //변환기호 lf므로 변수를 double로 설정
 return 0;
 }
-
 
 
 수정된 코드
 
 
+#include <stdio.h>
 
+int main(void)
+{
+	double length = 5.56; 
+	double area;
+	area = length * length;
+	const int number = 20; 
+
+	printf("사각형의 면적은 %lf 입니다.\n", area); 
+	return 0;
+}
 
 
 
