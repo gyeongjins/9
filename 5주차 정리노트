@@ -207,3 +207,59 @@ int main(void)
 0점에서 100점 사이의 점수를 입력하세요.
 -111
 0부터 100사이의 숫자를 입력하셔야 합니다.
+
+
+
+
+
+switch 문을 이용한 사칙연산
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h >
+
+int main(void)
+{
+	int num1, num2;
+	char arithmetic;
+
+	printf("숫자 2개와 연산자를 입력하세요.\n\n");
+
+	printf("연산자는 아래와 같습니다.\n");
+	printf("더하기 : +, 빼기 : -, 곱하기 : *, 나누기 : /\n");
+	printf("입력 순서 : 정수1 연산자 정수2\n\n");
+	scanf("%d %c %d", &num1, &arithmetic, &num2);
+
+	switch (arithmetic)
+	{
+	case '+':
+		printf("%d %c %d = %d \n", num1, arithmetic, num2, num1 + num2);
+		break;
+
+	case '-':
+		printf("%d %c %d = %d \n", num1, arithmetic, num2, num1 - num2);
+		break;
+
+	case '*':
+		printf("%d %c %d = %d \n", num1, arithmetic, num2, num1 * num2);
+		break;
+
+	case '/':
+		printf("%d %c %d = %d \n", num1, arithmetic, num2, num1 / num2);
+		break;
+	default:
+		printf("연산자를 잘못 입력했습니다.\n");
+		break;
+	}
+
+	return 0;
+}
+
+실행결과
+숫자 2개와 연산자를 입력하세요.
+
+연산자는 아래와 같습니다.
+더하기 : +, 빼기 : -, 곱하기 : *, 나누기 : /
+입력 순서 : 정수1 연산자 정수2
+
+100 * 155
+100 * 155 = 15500
