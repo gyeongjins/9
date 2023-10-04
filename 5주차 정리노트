@@ -72,3 +72,138 @@ int main(void)
 0점에서 100점 사이의 점수를 입력하세요.
 101
 0점에서 100점 사이를 입력하셔야 합니다.
+
+
+
+
+
+
+
+다중if문을 사용한예와 사용하지 않은 예
+
+
+if (input > = 0){
+if(input % 2 = = 0){
+printf("입력한 수 %d는 양수이며 짝수입니다.\n", input);
+else
+printf("입력한 수 %d는 양수이며 홀수입니다.\n", input);
+}
+
+if(input > = 0 && input % 2 = = 0)
+printf("입력한 수 %d는 양수이며 짝수입니다.\n", input);
+else if(input > = 0 && input % 2 ! = 0)
+printf("입력한 수 %d는 양수이며 홀수입니다.\n", input);
+else
+printf("입력한 수 %d는 음수입니다.\n");
+
+다른점 토의의견
+-다중 if문을 사용함으로써 불필요한 elseif와 else를 줄여 코드를 간단하게 만듦
+-조건을 다시 써도 되지않는다는 장점이 긴 코드를 짤때 이점으로 이루어 질듯 함
+
+
+
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h >
+int main(void)
+{
+	int input;
+
+	printf("영어로 인사하는법을 배우기.\n");
+	printf("아침 인사는 1번.\n");
+	printf("점심 인사는 2번.\n");
+	printf("저녁 인사는 3번.\n");
+	scanf("%d", &input);
+
+	switch (input) {
+	case 1:
+		printf("Good Morning!!\n");
+		break;
+	case 2:
+		printf("Good Afternoon!!\n");
+		break;
+	case 3:
+		printf("Good Night!!\n");
+		break;
+	}
+	return 0;
+}
+
+실행결과
+=
+영어로 인사하는법을 배우기.
+아침 인사는 1번.
+점심 인사는 2번.
+저녁 인사는 3번.
+2
+Good Afternoon!!
+
+Switch Case 문을 통하여 위에서 작성한 점수별 성적등급 if else 문 작성해보기
+
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h >
+int main(void)
+{
+	int jumsu;
+
+	printf("0점에서 100점 사이의 점수를 입력하세요.\n");
+	scanf("%d", &jumsu);
+
+	switch (jumsu / 10) 
+	{
+	case 10:
+	case 9: printf("점수는 %d점이고 성적은 %c입니다.\n", jumsu, 'A'); break;
+	case 8: printf("점수는 %d점이고 성적은 %c입니다.\n", jumsu, 'B'); break;
+	case 7: printf("점수는 %d점이고 성적은 %c입니다.\n", jumsu, 'C'); break;
+	case 6: printf("점수는 %d점이고 성적은 %c입니다.\n", jumsu, 'D'); break;
+	default: printf("점수는 %d점이고 성적은 %c입니다.\n", jumsu, 'F'); break;
+	}
+	return 0;
+
+에서
+
+추가 조건인 0에서 100사이의 숫자를 입력하지 않을시 
+"0부터 100사이의 숫자를 입력하세요"를 출력시키기 위한 조원과 토의결과
+
+if (jumsu > 100 && jumsu < 0)
+	printf("0부터 100사이의 숫자를 입력하셔야 합니다.\n");
+        return 0;
+
+를 중간에 추가해보았지만 적용이 되지않아 추가 토의를 한결과
+
+if문을 추가하지 않고 case1~5사이를 추가시킨뒤, default값에 추가조건을 입력하기로 하였습니다.
+
+int main(void)
+{
+	int jumsu;
+
+	printf("0점에서 100점 사이의 점수를 입력하세요.\n");
+	scanf("%d", &jumsu);
+
+
+	switch (jumsu / 10) 
+	{
+	case 10: printf("0부터 100사이의 숫자를 입력하셔야 합니다.\n"); break;
+	case 9: printf("점수는 %d점이고 성적은 %c입니다.\n", jumsu, 'A'); break;
+	case 8: printf("점수는 %d점이고 성적은 %c입니다.\n", jumsu, 'B'); break;
+	case 7: printf("점수는 %d점이고 성적은 %c입니다.\n", jumsu, 'C'); break;
+	case 6: printf("점수는 %d점이고 성적은 %c입니다.\n", jumsu, 'D'); break;
+	case 5: printf("점수는 %d점이고 성적은 %c입니다.\n", jumsu, 'F'); break;
+	case 4: printf("점수는 %d점이고 성적은 %c입니다.\n", jumsu, 'F'); break;
+	case 3: printf("점수는 %d점이고 성적은 %c입니다.\n", jumsu, 'F'); break;
+	case 2: printf("점수는 %d점이고 성적은 %c입니다.\n", jumsu, 'F'); break;
+	case 1: printf("점수는 %d점이고 성적은 %c입니다.\n", jumsu, 'F'); break;
+	default: printf("0부터 100사이의 숫자를 입력하셔야 합니다.\n"); break;
+	}
+	return 0;
+}
+
+실행결과:
+0점에서 100점 사이의 점수를 입력하세요.
+55
+점수는 55점이고 성적은 F입니다.
+
+0점에서 100점 사이의 점수를 입력하세요.
+-111
+0부터 100사이의 숫자를 입력하셔야 합니다.
