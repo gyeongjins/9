@@ -51,5 +51,75 @@ int main(void)
 3 + 2 = 5
 3 + 3 = 6
 
+별이 한칸씩 늘어나는 다중for문
+#include <stdio.h>
 
+int main(void)
+{
+	int i, j;
+	for (i = 1; i < 6; i++)
+	{
+		for (j = 1; j < i; j++)
+		{
+			printf("*");
+		}
+		printf("\n");
+	}
+	return 0;
+}
+을 작성하여 실행해보았으나 실행결과가
 
+*
+**
+***
+****
+로 되었음.
+
+멘토와의 토의결과 
+for (i = 1; i < 6; i++)
+	{
+		for (j = 1; j < i; j++)
+부분에서 i와 j가 둘다 1로 시작시 j < i라는 조건에 부합하지않아 첫번째 별이 입력되지 않는것으로 파악되어
+두가지의 해결법을 시도함
+
+		for (j = 0; j < i; j++)에서 j를 0으로 바꾸었더니 j < i 조건에 부합하여 실행결과가 옮게나옴
+
+또한 for (j = 1; j = i; j++)에서 j = 1을 그대로 두고 j= i로 바꾸엇더니 실행결과가 옮게 나옴 조건부합에 따른 결과오류인것으로 정해짐.
+수정된 1안
+#include <stdio.h>
+
+int main(void)
+{
+	int i, j;
+	for (i = 1; i < 6; i++)
+	{
+		for (j = 0; j < i; j++)
+		{
+			printf("*");
+		}
+		printf("\n");
+	}
+	return 0;
+수정된 2안
+#include <stdio.h>
+
+int main(void)
+{
+	int i, j;
+	for (i = 1; i < 6; i++)
+	{
+		for (j = 1; j = i; j++)
+		{
+			printf("*");
+		}
+		printf("\n");
+	}
+	return 0;
+}
+
+공통 실행결과 
+*
+**
+***
+****
+*****
