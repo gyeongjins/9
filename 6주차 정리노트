@@ -1,0 +1,21 @@
+for 문을 이용하여 a~z까지 출력하기
+a는 10진수로 97이고 z는 10진수로 122로 
+i의 초깃값은 97로 종료값은 122로 설정하기
+
+코드
+#include <stdio.h>
+
+int main(void)
+{
+	int i;
+	for (i = 97; i <= 122; i++)
+	{
+			printf("%c", i);
+	}
+	printf("\n");
+	return 0;
+
+}
+
+실행결과
+abcdefghijklmnopqrstuvwxyz
