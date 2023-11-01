@@ -1,0 +1,109 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#if 0
+int SumTwo(int a, int b);
+
+int main(void)
+{
+	int x = 10; int y = 5;
+	int value;
+
+	value = SumTwo(x, y);
+
+	printf("두 수의 합 : %d\n", value);
+
+	return 0;
+}
+
+int SumTwo(int a, int b)
+{
+	int result;
+	result = a + b;
+	return result;
+}
+#endif 01
+
+#if 0
+float Average(float x, float y)
+int main(void)
+{
+	float num1, num2, result;
+	printf("두 실수를 입력하세요 : ");
+	scanf("%f %f", &num1, &num2);
+
+	result = Average(num1, num2);
+	return 0;
+}
+float Average(float x, float y)
+{
+	float h;
+	h = (x + y) / 2;
+	return h;
+}
+#endif 01
+
+#if 0
+void print_hello()
+{
+	printf("Hi, World!\n");
+}
+int main(void)
+{
+	printf("함수 주소값 : %p\n", print_hello);
+
+	return 0;
+}
+#endif 01
+
+
+
+#if 01
+int Integral(int start, int end)
+{
+	int sum = 0, i;
+	for (i = start; i <= end; i++)
+		sum += i;
+	return sum;
+}
+#endif 01
+
+//예제 8-3 
+int Intergral(int start, int end);
+int main(void)
+{
+	int sum = 0, i;
+	printf("함수를 사용하지 않고 합을 구함");
+	for (i = 1; i <= 10; i++) 
+		sum += i;
+	printf("1부터 10까지의 합은 %d이다.\n", sum);
+
+	sum = 0;
+	
+	for (i = 7; i <= 17; i++)
+		sum += i;
+
+	printf("7부터 17까지의 합은 %d이다.\n", sum);
+	printf("--------------------------------\n");
+	printf("함수를 사용하여 나온 합\n");
+	printf("1부터 10까지의 합은 %d이다.\n", Intergral(1, 10));
+	printf("7부터 17까지의 합은 %d이다.\n", Intergral(7, 17));
+
+	return 0;
+}
+int Intergral(int start, int end)
+{
+	int result = 0, i;
+	for (i = start; i <= end; i++)
+		result += i;
+	return result;
+}
+
+//------------실행결과 :
+//함수를 사용하지 않고 합을 구함
+1부터 10까지의 합은 55이다.
+7부터 17까지의 합은 132이다.
+--------------------------------
+함수를 사용하여 나온 합
+1부터 10까지의 합은 55이다.
+7부터 17까지의 합은 132이다.
+
