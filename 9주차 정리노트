@@ -156,3 +156,47 @@ void upper_case(char ch)
 }
 #endif 01
 로 수정하면 대문자 -> 소문자 변환 함수가 완성된다.
+
+
+#if 0
+int SumArray(int Array[], int Size); 
+int main(void)
+{
+	int a[] = { 10, 5, 15, 25, 7 };
+	int Sum;
+	Sum = SumArray(a, 5); 
+	printf("배열 원소의 합 : %d\n", Sum);
+	return 0;
+}
+
+int SumArray(int Array[], int Size) 
+{
+	int result = 0, i;
+	for (i = 0; i < Size; i++)
+		result += Array[i];
+
+	return result;
+}
+
+
+#endif 01
+
+#if 01
+int factorial(int n);
+int main(void)
+{
+	int fact_num;
+	fact_num = factorial(10);
+
+	printf("10 팩토리얼 : %d\n", fact_num);
+	return 0;
+}
+
+int factorial(int n)
+{
+	if (n <= 1)
+		return(1);
+	else
+		return(n * factorial(n - 1));
+}
+#endif 01
