@@ -224,3 +224,49 @@ int main(void)
 	
 }
 #endif 01
+
+
+
+예제 11 최댓값 최솟값
+#if 01
+#include <stdio.h>
+int Max(int Array[], int Size);
+int Min(int Array[], int Size);
+
+int main(void)
+{
+	int b[] = { 20, 34, 12, 24, 54, 91, 9, 40, 81, 10 };
+	int max, min;
+	max = Max(b, 10); 
+	min = Min(b, 10); 
+	printf("최대값: %d\n", max);
+	printf("최소값: %d\n", min);
+
+	return 0;
+}
+int Max(int Array[], int Size)
+{
+	int result = Array[0]; 
+
+	for (int i = 1; i < Size; i++)
+	{
+		if (Array[i] > result)
+		{
+			result = Array[i];
+		}
+	}
+	return result;
+}
+int Min(int Array[], int Size)
+{
+	int result = Array[0]; 
+	for (int i = 1; i < Size; i++)
+	{
+		if (Array[i] < result)
+		{
+			result = Array[i];
+		}
+	}
+	return result;
+}
+#endif 01
