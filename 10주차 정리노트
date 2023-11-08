@@ -1,0 +1,185 @@
+#include <stdio.h>
+#if 0
+int main(void)
+{
+	int i = 10;
+	int* ptr = &i;
+
+	printf("ptr의 주소값 : %p\n", &ptr);
+	printf("i의 주소값 : %p\n", &i);
+	printf("i의 주소값 : %p\n\n", ptr);
+
+	printf("i의 값 : %d\n", i);
+	printf("i의 값 : %d\n", *ptr);
+
+	return 0;
+}
+#endif 01
+#if 0
+
+int main(void)
+{
+	int
+		i = 10;
+	int* ptr = &i;
+
+	*ptr = i + 20;
+	printf("i값 : %d\n", i);
+
+	i = i + 20;
+	printf("i값 : %d\n", *ptr);
+	return 0;
+}
+
+#endif 01
+
+#if 0
+void Swap(int a, int b);
+int main(void)
+
+{
+	int x = 10, y = 5;
+	printf("Swap() 함수 실행 전\n");
+	printf("x = %d, y= %d이다.\n\n", x, y);
+
+	Swap(x, y);
+	printf("Swap() 함수 실행 후 \n");
+	printf("x = %d, y = %d이다.\n", x, y);
+
+	return 0;
+}
+
+void Swap(int a, int b)
+{
+	int temp;
+	temp = a;
+	a = b;
+	b = temp;
+}
+#endif 01 
+
+#if 0
+void Swap(int *a, int *b);
+int main(void)
+{
+	int x = 10, y = 5;
+	printf("Swap() 함수 실행 전\n");
+	printf("x = %d, y= %d이다.\n\n", x, y);
+
+	Swap(&x, &y); 
+	printf("Swap() 함수 실행 후 \n");
+	printf("x = %d, y = %d이다.\n", x, y);
+
+	return 0;
+}
+
+void Swap(int *a, int *b)
+{
+	int temp;
+	temp = *a;
+	*a = *b;
+	*b = temp;
+}
+#endif 01
+
+#if 0
+
+void Countlncrement1(int n);
+void Countlncrement2(int* n);
+int main(void)
+{
+	int a = 10;
+	printf("a의 초깃값 : %d\n", a);
+
+	Countlncrement1(a);
+	printf("Countlncrement1 함수 실행 후 a의 값 : %d\n", a);
+
+	Countlncrement2(&a);
+	printf("Countlncrement2 함수 실행 후 a의 값 : %d\n", a);
+
+	return 0;
+}
+
+void Countlncrement1(int n)
+{
+	n++;
+}
+   
+void Countlncrement2(int* n)
+{
+	(*n)++;
+}
+
+#endif 01
+
+#if 0
+int main(void)
+{
+	int a[] = { 10, 20, 30, 40, 50 };
+	int* p = a;
+	int i;
+
+	printf("배열명 a를 이용한 주소 표현\n");
+	for (i = 0; i < 5; i++)
+		printf("a[%d]의 주소 %p\n", i, a + i);
+
+	printf("\n포인터 p를 이용한 배열 주소 표현\n");
+	for (i = 0; i < 5; i++)
+		printf("a[%d]의 주소 %p\n", i, p + i);
+
+	printf("\n포인터 p를 이용한 배열 값 표현 \n");
+	for (i = 0; i < 5; i++)
+		printf("a[%d] = %d\n", i, *(p + i));
+
+	return 0;
+}
+#endif 01
+// p++ : 포인터 p가 가리키는 곳의 다음 주소를 의미
+// *p++ : 포인터 p가 가리키는 곳의 다음 주소 안에 들어 있는 값을 의미
+// a++ : 배열명 a는 상수이므로 증감 연산자를 사용할 수 없음.
+#if 0
+int main(void)
+{
+	int a[] = { 11, 22, 33, 44, 55 };
+	int* p = a;
+
+	printf("*p의 값 = %d\n", *p);
+	p++;
+
+	printf("*(p+1)의 값 = %d\n", *p);
+	p++;
+
+	printf("*(p+2)의 값 = %d\n", *p);
+	p--;
+
+	printf("*(p+1)의 값 = %d\n", *p);
+	return 0;
+}
+#endif 01
+
+#if 01
+int SumArray(int* pA, int Size);
+int main(void)
+{
+	int a[] = { 10, 5, 15, 25, 7 };
+	int Sum;
+	Sum = SumArray(a, 5); // 함수 호출
+	printf("배열의 합: %d\n", Sum);
+
+	return 0;
+}
+
+int SumArray(int* pA, int Size)
+{
+	int result = 0, i;
+
+	for (i = 0; i < Size; i++)
+		result += pA[i];
+	// result += *(pA +i);
+	// result += *pA ++;
+	// pA[i], *(pA + i), *pA++는 같은 의미
+	//*pA++ : *보다 ++연산자의 우선순위가 빨라 배열의 원소 값을 나타낼 수 있음
+	//(*pA)++ : pA가 가리키는 곳의 값을 연산 후에 1만큼 증가시킨다는 의미
+	return result;
+}
+#endif 01
