@@ -1,0 +1,57 @@
+#include <stdio.h>
+
+int Max(int* pArr, int size);
+int Min(int* pArr, int size);
+void Sorting(int* pArr, int size);
+
+int main(void)
+{
+	int b[] = {20, 34, 12, 24, 54, 91, 9, 40, 81, 10};
+
+	printf("정렬 전 배열 = ");
+	for (int i = 0; i < 10; i++)
+		printf("%d ", b[i]);
+	printf("\n");
+	
+	Sorting(b, 10);
+
+	printf("정렬 후 배열 = ");
+	for (int i = 0; i < 10; i++)
+		printf("%d ", b[i]);
+	printf("\n");
+
+	printf("최대값은 %d\n", Max(b, 10));
+	printf("최소값은 %d\n", Min(b, 10));
+
+}
+
+int Max(int* pArr, int size)
+{
+	int max = pArr[0];
+	for (int i = 1; i < size; i++)
+		if (pArr[i] > max) max = pArr[i];
+	return max;
+}
+
+int Min(int* pArr, int size)
+{
+	int min = pArr[0];
+	for (int i = 1; i < size; i++)
+		if (pArr[i] < min) min = pArr[i];
+	return min;
+}
+
+void Sorting(int* pArr, int size)
+{
+	int temp;
+	for (int i = 0; i < size - 1; i++) {
+		for (int j = i + 1; j < size; j++) {
+			if (pArr[i] < pArr[j])
+			{
+				temp = pArr[i];
+				pArr[i] = pArr[j];
+				pArr[j] = temp;
+			}
+		}
+	}
+}
