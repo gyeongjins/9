@@ -1,0 +1,75 @@
+#include <stdio.h>
+
+int main(void)
+{
+	char *pC = "C programming";
+	printf("문자열을 변환기호를 이용해서 출력\n");
+	printf("%s\n", pC);
+	printf("반복문을 이용해 한 글자씩 출력\n");
+	while (*pC)
+		printf("%c", *pC**);
+	printf("\n");
+
+	return 0;
+}
+
+
+배열 포인터로 문자열을 리터럴 하는 단계이지만
+일반적인 C언어에서는 위의 코드가 정상적으로 작동되는 반면 C++에서는 char이 문자열을 리터럴 할수 없어서
+const char *pC = "C programming"; 으로 바꿔서 작성함 
+그러지 않으면 오류발생으로 코드 실행 불가
+
+
+
+#if 0
+int main(void)
+{
+	const char* pStr[] = { "english", "math", "korean" };
+	const char subjet[][8] = { "english", "math", "korean" };
+	int i;
+	printf("포인터 배열을 이용해서 문자열을 출력합니다.\n");
+	for (i = 0; i < 3; i++)
+		printf("pStr[%d] = %s\n", i, pStr[i]);
+
+	printf("2차원 배열을 이용해서 문자열을 출력합니다.\n");
+	for (i = 0; i < 3; i++)
+		printf("subject[%d] = %s\n", i, subjet[i]);
+
+	return 0;
+}
+#endif 02
+
+#if 0
+int main(void)
+{
+	const char* pC = "c language";
+
+	while (*pC)
+	{
+		printf("%c", *pC - 32);
+		pC++;
+	}
+	printf("\n");
+	return 0;
+}
+#endif 03
+
+#if 0
+int strleng(char* ch);
+int main(void)
+{
+	int len;
+	char str[] = "c language and data structure";
+	len = strleng(str);
+	printf("문자열의 크기는 %d다.\n", len);
+	return 0;
+}
+
+int strleng(char* ch)
+{
+	int index;
+	for (index = 0; *(ch + index) != '\0'; index++);
+
+	return index;
+}
+#endif 04
