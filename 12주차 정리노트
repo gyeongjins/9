@@ -244,3 +244,30 @@ int main(void)
 점 A1과 원점의 거리는 5.10이다.
 점 A1과 점 A2의 거리는 8.77이다.
 점 A1을 원점에 대칭시킨 점의 x : -1.00, y : -0.00, z : -5.00이다.
+
+
+
+#if 01
+int main(void)
+{
+	enum { yellow, red, blue, green } color;
+	printf("원하는 색을 입력하세요.\n");
+	printf("0번 : 노란색, 1번 : 빨간색\n");
+	printf("2번 : 파란색, 3번 : 초록색\n");
+	scanf("%d", &color);
+
+	if (color == yellow) printf("노란색입니다.\n");
+	else if (color == red) printf("빨간색입니다.\n");
+	else if (color == blue) printf("파란색입니다.\n");
+	else if (color == green) printf("초록색입니다.\n");
+
+	return 0;
+}
+#endif 09
+
+실행결과:
+원하는 색을 입력하세요.
+0번 : 노란색, 1번 : 빨간색
+2번 : 파란색, 3번 : 초록색
+3
+초록색입니다.
