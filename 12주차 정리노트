@@ -99,3 +99,45 @@ int main(void)
 
 C:\test 12\Project2\x64\Debug\Project2.exe(프로세스 4708개)이(가) 종료되었습니다(코드: 0개).
 이 창을 닫으려면 아무 키나 누르세요...
+
+
+
+
+
+
+
+
+
+#if 06
+struct list {
+	char name;
+	char gender;
+	int age;
+};
+
+int main(void)
+{
+	struct list st1, st2;
+	st1.name = 'T';
+	st1.gender = 'M';
+	st1.age = 25;
+
+	st2.name = 'S';
+	st2.gender = 'F';
+	st2.age = 28;
+
+	printf("이름 성별 나이\n");
+	printf("------------------\n");
+	printf(" %c %c %d\n", st1.name, st1.gender, st1.age);
+	printf(" %c %c %d\n", st2.name, st2.gender, st2.age);
+
+	return 0;
+}
+#endif 06
+
+실행결과:
+이름 성별 나이
+------------------
+ T M 25
+ S F 28
+
