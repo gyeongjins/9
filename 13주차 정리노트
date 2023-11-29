@@ -1,0 +1,102 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+
+#if 0
+int main(void)
+{
+	FILE* fp;
+	char ch;
+
+	if ((fp = fopen("basic.txt", "w")) == NULL)
+	{
+		printf("파일이 열리지 않습니다.\n");
+		exit(1);
+	}
+
+	printf("문자 하나를 입력하세요.\n");
+	ch = getchar();
+
+	while (ch != 'q')
+	{
+		fputc(ch, fp);
+		ch = getchar();
+	}
+
+	printf("파일 입력이 종료되었습니다. \n");
+	return 0;
+}
+#endif 01
+
+#if 0
+#include <stdio.h>
+#include <stdlib.h>
+#define LINE 30
+
+int main(void)
+{
+	FILE* fp1, * fp2;
+	char line[LINE];
+
+	fp1 = fopen("lineInput.txt", "r");
+
+	if (fp1 == NULL)
+	{
+		printf("파일을열수 없습니다.\n");
+		exit(1);
+	}
+
+	fp2 = fopen("linetarget.txt", "w");
+
+	while (fgets(line, LINE, fp1) != NULL)
+		fputs(line, fp2);
+
+	fclose(fp1);
+	fclose(fp2);
+
+	return 0;
+}
+#endif 02
+
+#if 0
+ #include <stdio.h>
+ #include <stdlib.h>
+
+ struct students{
+ char name[40];
+ char address[40];
+ int age;
+ };
+
+ typedef struct students student;
+
+ int main(void)
+ {
+ FILE* fp1;
+
+ student st1 = {"홍길동", "서울", 30}, st2;
+
+ if((fp1 = fopen("basic.txt", "w")) == NULL)
+
+{
+ printf("파일을열수 없습니다.\n");
+ exit(1);
+ }
+
+ fprintf(fp1, "%s %s %d\n", st1.name, st1.address, st1.age);
+ fclose(fp1);
+
+ if ((fp1 = fopen("basic.txt", "r")) == NULL)
+ {
+	 printf("파일을 열 수 없습니다.\n");
+	 exit(1);
+ }
+
+ fscanf(fp1, "%s %s %d\n", st2.name, st2.address, &st2.age);
+ printf("이름 : %s, 거주지 : %s, 나이 : %d\n\n", st2.name, st2.address, st2.age);
+
+ fclose(fp1);
+ return 0;
+ }
+
+#endif 03
